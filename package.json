@@ -1,5 +1,5 @@
 {
-  "name": "@vulderapp/vulder-api",
+  "name": "vulder-api",
   "version": "0.1.0",
   "description": "API client for Vulder API",
   "main": "./dist/index.js",

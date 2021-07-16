@@ -16,7 +16,8 @@ jobs:
         run: npm i
       - name: Build lib
         run: npm run build
-      - name: Deploy lib to npm.org
-        run: npm publish
-        env:
-          NODE_AUTH_MODEL: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy lib to npmjs.org
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          access: public
