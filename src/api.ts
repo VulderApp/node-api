@@ -2,6 +2,7 @@ import axios from "axios";
 import { School } from "./response/search/school";
 import { Search } from "./response/search/search";
 import { Branch } from "./response/branches/branch";
+import { Timetable } from "./response/timetable/timetable";
 
 export class Api {
   url: string;
@@ -26,9 +27,6 @@ export class Api {
         }
 
         return Array<School>();
-      })
-      .catch((err) => {
-        throw new Error(err);
       });
   }
 
@@ -48,9 +46,25 @@ export class Api {
         }
 
         return new Array<Branch>();
+      });
+  }
+
+  async getTimetable(url: string): Promise<Timetable> {
+    return await axios
+      .request<Timetable>({
+        method: "get",
+        url: "/school/timetable/Current",
+        baseURL: this.url,
+        params: {
+          url: url,
+        },
       })
-      .catch((err) => {
-        throw new Error(err);
+      .then((res) => {
+        if (res.status == 200) {
+          return res.data;
+        }
+
+        return {} as Timetable;
       });
   }
 }

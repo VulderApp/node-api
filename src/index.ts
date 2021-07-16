@@ -1,3 +1,9 @@
 export { Api } from "./api";
 export { Search } from "./response/search/search";
 export { School } from "./response/search/school";
+export { Branch } from "./response/branches/branch";
+export { Timetable } from "./response/timetable/timetable";
+export { TimetableItem } from "./response/timetable/timetableItem";
+export { Week } from "./response/timetable/week";
+export { Classroom } from "./response/timetable/classroom";
+export { Teacher } from "./response/timetable/teacher";
