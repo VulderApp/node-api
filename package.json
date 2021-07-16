@@ -1,12 +1,12 @@
 {
   "name": "ts-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "API client for Vulder API",
   "main": "index.js",
   "scripts": {
     "build": "tsc --project tsconfig.json",
     "test": "jest",
-    "lint": "eslint ./src",
+    "lint": "eslint src/*.{ts,tsx}",
     "prettier": "prettier --write ./src/*.ts"
   },
   "keywords": [],
