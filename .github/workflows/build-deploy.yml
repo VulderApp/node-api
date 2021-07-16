@@ -1,8 +1,6 @@
-name: Test
+name: Build & deploy
 on:
   push:
-    branches: [ main ]
-  pull_request:
     branches: [ main ]
 jobs:
   build:
@@ -16,5 +14,9 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm i
-      - name: Test project
-        run: npm run test
+      - name: Build lib
+        run: npm run build
+      - name: Deploy lib to npm.org
+        run: npm publish
+        env:
+          NODE_AUTH_MODEL: ${{ secrets.NPM_TOKEN }}
